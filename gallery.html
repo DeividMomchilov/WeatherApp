@@ -1,11 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Видео Галерия</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Видео Галерия - Времето в България</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <header class="site-header">
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="index.html">🏠 Начало</a></li>
+        <li><a href="gallery.html" class="active">🎥 Видео Галерия</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-layout">
     
+    <aside class="sidebar-left">
+      <nav class="vertical-nav">
+        <h3>Меню</h3>
+        <ul>
+          <li><a href="index.html" class="nav-item">Времето</a></li>
+          <li><a href="gallery.html" class="nav-item active">AI Видео Галерия</a></li>
+        </ul>
+      </nav>
+      
+      <div class="info-box">
+        <h4>За проекта</h4>
+        <p>Курсов проект по "Уеб Програмиране". Демонстрация на генерирано AI съдържание.</p>
+      </div>
+    </aside>
+
+    <main class="main-content" role="main">
+      <div class="gallery-container">
+        <header class="app-header">
+          <h1>🎥 AI Видео Прогноза</h1>
+          <p>Генерирано съдържание с помощта на изкуствен интелект.</p>
+        </header>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-wrapper">
+              <iframe width="560" height="315" src="-2050-.mp4" title="AI Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+              <h3>Прогноза за Седмицата</h3>
+              <p>Видео генерирано с <strong>Fliki.ai</strong>. Използван "Text-to-Video" модел.</p>
+            </div>
+          </article>
+
+        </div>
+        
+        <footer class="app-footer">
+          <p>Всички видеа са с учебна цел.</p>
+        </footer>
+      </div>
+    </main>
+
+    <aside class="sidebar-right">
+      <div class="info-card">
+        <h4>🤖 Използвани AI Инструменти</h4>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>Fliki (Видео монтаж)</li>
+          <li>ChatGPT (Сценарии)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>ℹ️ Изисквания</h4>
+        <p>Видеото е с продължителност 1 минута и съдържа поне 5 различни кадъра.</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 Курсов проект | Студент: Дейвид Момчилов</p>
+  </footer>
+
 </body>
 </html>
