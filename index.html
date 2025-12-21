@@ -3,49 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Проследяване на времето в България</title>
+  <title>Времето в България</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav>
-    <ul>
-      <li>
-        <a href="/index.html"><h2>Времето в България</h2></a>
-      </li>
-      <li>
-        <a href="/galery.html"><h2>Видео Галерия</h2></a>
-      </li>
-    </ul>
-  </nav>
+  <div class="page-layout">
+    
+    <aside class="sidebar-left">
+      <nav class="vertical-nav">
+        <h3>Меню</h3>
+        <ul>
+          <li><a href="index.html" class="nav-item active">Времето</a></li>
+          <li><a href="gallery.html" class="nav-item">AI Видео Галерия</a></li>
+        </ul>
+      </nav>
+      
+      <div class="info-box">
+        <h4>За проекта</h4>
+        <p>Курсов проект по "Уеб Програмиране 1".</p>
+      </div>
+    </aside>
 
-  <main class="container" role="main" aria-labelledby="main-title">
-    <header>
-      <h1 id="main-title">☀️ Времето в България</h1>
-      <p>Въведете име на населено място (на български) и натиснете <strong>„Търсене“</strong>.</p>
-    </header>
+    <main class="main-content" role="main">
+      <div class="weather-app-container">
+        <header class="app-header">
+          <h1 id="main-title">☀️ Времето в България</h1>
+          <p>Въведете населено място и натиснете <strong>„Търсене“</strong>.</p>
+        </header>
 
-    <section class="controls" aria-label="Търсене на населено място">
-      <input id="place-input" type="text" placeholder="Например: София, Варна, Пловдив..." lang="bg" aria-label="Име на населено място" />
-      <button id="search-btn" type="button">Търсене</button>
-    </section>
+        <section class="controls" aria-label="Търсене на населено място">
+          <input id="place-input" type="text" placeholder="Напр: София, Пловдив..." lang="bg" />
+          <button id="search-btn" type="button">Търсене</button>
+        </section>
 
-    <section id="output" class="result" aria-live="polite">
-      <div id="placeholder" class="meta">🔍 Няма данни. Въведете населено място и натиснете „Търсене“.</div>
+        <section id="output" class="result" aria-live="polite">
+          <div id="placeholder" class="meta">🔍 Няма данни.</div>
 
-      <article id="weather-card" style="display:none;">
-        <h2 id="place-name"></h2>
-        <p class="meta" id="coords"></p>
-        <p id="current-weather" class="weather-value"></p>
-        <ul id="more-info" class="meta"></ul>
-      </article>
+          <article id="weather-card" style="display:none;">
+            <h2 id="place-name"></h2>
+            <p class="meta" id="coords"></p>
+            <p id="current-weather" class="weather-value"></p>
+            <ul id="more-info" class="meta"></ul>
+          </article>
 
-      <div id="error" class="error" role="alert" style="display:none;"></div>
-    </section>
+          <div id="error" class="error" role="alert" style="display:none;"></div>
+        </section>
+        
+        <footer class="app-footer">
+          <p>Данни: Open-Meteo & Nominatim</p>
+        </footer>
+      </div>
+    </main>
 
-    <footer>
-      <p>Източник на данни: <strong>Open-Meteo</strong> + <strong>OpenStreetMap / Nominatim</strong>.</p>
-    </footer>
-  </main>
+    <aside class="sidebar-right">
+      <div class="info-card">
+        <h4>💡 Знаете ли че?</h4>
+        <p>Най-ниската температура в България е измерена в Трън (-38.3°C).</p>
+      </div>
+      <div class="info-card">
+        <h4>🌍 Локация</h4>
+        <p>Приложението работи само за градове в България.</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 Курсов проект | Студент: Твоето Име</p>
+  </footer>
 
   <script src="index.js"></script>
 </body>

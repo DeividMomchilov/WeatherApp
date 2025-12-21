@@ -1,163 +1,203 @@
-/* Основни цветове и променливи */
 :root {
-    --bg-gradient: linear-gradient(135deg, #74c0fc, #a5d8ff, #d0ebff);
-    --accent-color: #1e6fd9;
-    --accent-hover: #1255aa;
-    --text-dark: #0b2545;
-    --text-light: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    --radius: 16px;
-    --transition: all 0.3s ease;
+  --bg-gradient: linear-gradient(135deg, #74c0fc, #a5d8ff, #d0ebff);
+  --accent-color: #1e6fd9;
+  --accent-hover: #1255aa;
+  --text-dark: #0b2545;
+  --text-light: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --radius: 16px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  color: var(--text-dark);
+  animation: fadeIn 1s ease forwards;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  width: 95%;
+  max-width: 1400px;
+  margin: 20px auto;
+  flex: 1;
+}
+
+.sidebar-left, .sidebar-right {
+  display: none; 
+}
+
+.site-header {
+  background: var(--card-bg);
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.weather-app-container {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  transition: var(--transition);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px; 
+}
+
+.weather-app-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1.5px solid #b6d0f5;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+button {
+  background: var(--accent-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+button:hover {
+  background: var(--accent-hover);
+}
+
+.result {
+  padding: 15px;
+  border-radius: var(--radius);
+  background: rgba(240, 248, 255, 0.6);
+  min-height: 150px; /* Запазва място да не подскача */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 10px 0;
+}
+
+.meta { list-style: none; padding: 0; color: #555; }
+.error { color: #b30000; font-weight: bold; animation: shake 0.4s ease; }
+
+.app-footer { margin-top: 20px; font-size: 0.8rem; color: #666; }
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@media (min-width: 768px) {
+  header h1 { font-size: 2.5rem; }
+  .weather-app-container { padding: 40px; }
+}
+
+@media (min-width: 992px) {
+  .page-layout { max-width: 900px; }
+}
+
+@media (min-width: 1200px) {
+  .site-header { display: none; }
+
+  .page-layout {
+    grid-template-columns: 250px 1fr 250px;
+    align-items: start;
+    max-width: 1400px;
   }
-  
-  /* Глобален стил */
-  body {
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg-gradient);
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-dark);
-    animation: fadeIn 1s ease forwards;
-  }
-  
-  /* Контейнер */
-  .container {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 40px 32px;
-    width: 90%;
-    max-width: 720px;
-    box-sizing: border-box;
-    backdrop-filter: blur(6px);
-    transition: var(--transition);
-  }
-  
-  .container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Заглавие и описание */
-  header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 6px;
-    text-align: center;
-    color: var(--accent-color);
-  }
-  
-  header p {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #1b3b65;
-    margin-bottom: 24px;
-  }
-  
-  /* Поле за въвеждане и бутон */
-  .controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  
-  input[type="text"] {
-    flex: 1;
-    padding: 12px 14px;
-    font-size: 1.1rem;
-    border-radius: var(--radius);
-    border: 1.5px solid #b6d0f5;
-    transition: var(--transition);
-  }
-  
-  input[type="text"]:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 8px rgba(30, 111, 217, 0.4);
-  }
-  
-  /* Бутон */
-  button {
-    background: var(--accent-color);
-    color: var(--text-light);
-    border: none;
-    border-radius: var(--radius);
-    padding: 12px 18px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-  }
-  
-  button:hover {
-    background: var(--accent-hover);
-    transform: scale(1.05);
-  }
-  
-  button:active {
-    transform: scale(0.97);
-  }
-  
-  /* Резултати */
-  .result {
+
+  .sidebar-left, .sidebar-right {
+    display: block;
+    background: var(--glass-bg);
     padding: 20px;
     border-radius: var(--radius);
-    background: rgba(240, 248, 255, 0.6);
-    border: 1px solid rgba(0, 100, 255, 0.1);
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+  }
+
+  .vertical-nav ul { list-style: none; padding: 0; }
+  .vertical-nav li { margin-bottom: 10px; }
+  .vertical-nav a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--text-dark);
+    background: rgba(255,255,255,0.5);
     transition: var(--transition);
   }
-  
-  .result:hover {
-    background: rgba(240, 248, 255, 0.8);
+  .vertical-nav a:hover, .vertical-nav a.active {
+    background: var(--accent-color);
+    color: white;
   }
   
-  .weather-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-color);
+  .info-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
   }
-  
-  .meta {
-    font-size: 1rem;
-    color: #27496d;
-  }
-  
-  .error {
-    color: #b30000;
-    font-weight: 600;
-    margin-top: 12px;
-    animation: shake 0.4s ease;
-  }
-  
-  /* Footer */
-  footer {
-    margin-top: 24px;
-    text-align: center;
-    font-size: 0.95rem;
-    color: #35577c;
-  }
-  
-  /* Анимации */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-6px); }
-    50% { transform: translateX(6px); }
-    75% { transform: translateX(-3px); }
-  }
-  
-  /* Responsive */
-  @media (max-width: 540px) {
-    .controls { flex-direction: column; }
-    button { width: 100%; }
-    header h1 { font-size: 1.8rem; }
-  }
-  
+}
