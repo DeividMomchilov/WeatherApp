@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Проследяване на времето в България</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="/index.html"><h2>Времето в България</h2></a>
+      </li>
+      <li>
+        <a href="/galery.html"><h2>Видео Галерия</h2></a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container" role="main" aria-labelledby="main-title">
+    <header>
+      <h1 id="main-title">☀️ Времето в България</h1>
+      <p>Въведете име на населено място (на български) и натиснете <strong>„Търсене“</strong>.</p>
+    </header>
+
+    <section class="controls" aria-label="Търсене на населено място">
+      <input id="place-input" type="text" placeholder="Например: София, Варна, Пловдив..." lang="bg" aria-label="Име на населено място" />
+      <button id="search-btn" type="button">Търсене</button>
+    </section>
+
+    <section id="output" class="result" aria-live="polite">
+      <div id="placeholder" class="meta">🔍 Няма данни. Въведете населено място и натиснете „Търсене“.</div>
+
+      <article id="weather-card" style="display:none;">
+        <h2 id="place-name"></h2>
+        <p class="meta" id="coords"></p>
+        <p id="current-weather" class="weather-value"></p>
+        <ul id="more-info" class="meta"></ul>
+      </article>
+
+      <div id="error" class="error" role="alert" style="display:none;"></div>
+    </section>
+
+    <footer>
+      <p>Източник на данни: <strong>Open-Meteo</strong> + <strong>OpenStreetMap / Nominatim</strong>.</p>
+    </footer>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
