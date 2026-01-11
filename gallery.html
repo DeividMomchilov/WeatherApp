@@ -5,21 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI Видео Галерия - Времето в България</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/cloudy.png">
 </head>
 <body>
-
-  <header class="site-header">
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="index.html">🏠 Начало</a></li>
-        <li><a href="gallery.html" class="active">🎥 Видео Галерия</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <div class="page-layout">
-    
-    <aside class="sidebar-left">
+    <aside class="sidebar-left" id="side-menus">
       <nav class="vertical-nav">
         <h3>Меню</h3>
         <ul>
@@ -27,40 +17,34 @@
           <li><a href="gallery.html" class="nav-item active">AI Видео Галерия</a></li>
         </ul>
       </nav>
-      
       <div class="info-box">
         <h4>За проекта</h4>
         <p>Курсов проект по "Уеб Програмиране". Демонстрация на генерирано AI съдържание.</p>
       </div>
     </aside>
-
     <main class="main-content" role="main">
       <div class="gallery-container">
         <header class="app-header">
           <h1>🎥 AI Видео Прогноза</h1>
           <p>Генерирано съдържание с помощта на изкуствен интелект.</p>
         </header>
-
         <div class="video-grid">
           <article class="video-card">
             <div class="video-wrapper">
-              <iframe width="560" height="315" src="-2050-.mp4" title="AI Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+              <video controls preload="metadata" src="assets/-2050-.mp4"></video>            
+           </div>
             <div class="video-info">
               <h3>Прогноза за Седмицата</h3>
               <p>Видео генерирано с <strong>Fliki.ai</strong>. Използван "Text-to-Video" модел.</p>
             </div>
           </article>
-
         </div>
-        
         <footer class="app-footer">
           <p>Всички видеа са с учебна цел.</p>
         </footer>
       </div>
     </main>
-
-    <aside class="sidebar-right">
+    <aside class="sidebar-right" id="side-info">
       <div class="info-card">
         <h4>🤖 Използвани AI Инструменти</h4>
         <ul style="padding-left: 20px; margin: 0;">
@@ -73,12 +57,13 @@
         <p>Видеото е с продължителност 1 минута и съдържа поне 5 различни кадъра.</p>
       </div>
     </aside>
-
   </div>
-
   <footer class="site-footer">
-    <p>&copy; 2024 Курсов проект | Студент: Дейвид Момчилов</p>
+    <p>&copy; 2026 Курсов проект</p>
   </footer>
-
+  <script src="ui.js"></script>
+  <button class="mobile-menu-toggle" aria-controls="side-menus" aria-label="Меню" aria-expanded="false">☰</button>
+  <button class="mobile-info-toggle" aria-controls="side-info" aria-label="Информация" aria-expanded="false">ℹ️</button>
+  <div class="backdrop" hidden></div>
 </body>
 </html>
