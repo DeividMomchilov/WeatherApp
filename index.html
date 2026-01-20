@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/cloudy.png">
 </head>
+
 <body>
   <div class="page-layout">
     <aside class="sidebar-left" id="side-menus">
+
       <nav class="vertical-nav">
         <h3>Меню</h3>
         <ul>
@@ -17,54 +19,71 @@
           <li><a href="gallery.html" class="nav-item">AI Видео Галерия</a></li>
         </ul>
       </nav>
+
       <div class="info-box">
         <h4>За проекта</h4>
         <p>Курсов проект по "Уеб Програмиране".</p>
       </div>
+
     </aside>
+
     <main class="main-content" role="main">
       <div class="weather-app-container">
         <header class="app-header">
           <h1 id="main-title">☀️ Времето в България</h1>
           <p>Въведете населено място и натиснете <strong>„Търсене“</strong>.</p>
         </header>
+
         <section class="controls" aria-label="Търсене на населено място">
           <input id="place-input" type="text" placeholder="Напр: София, Пловдив..." lang="bg" />
           <button id="search-btn" type="button">Търсене</button>
         </section>
+
         <section id="output" class="result" aria-live="polite">
           <div id="placeholder" class="meta">🔍 Няма данни.</div>
+
           <article id="weather-card" style="display:none;">
             <h2 id="place-name"></h2>
             <p class="meta" id="coords"></p>
             <p id="current-weather" class="weather-value"></p>
             <ul id="more-info" class="meta"></ul>
           </article>
+
           <div id="error" class="error" role="alert" style="display:none;"></div>
         </section>
+
         <footer class="app-footer">
           <p>Данни: Open-Meteo & Nominatim</p>
         </footer>
+
       </div>
     </main>
+
     <aside class="sidebar-right" id="side-info">
+
       <div class="info-card">
         <h4>💡 Знаете ли че?</h4>
         <p>Най-ниската температура в България е измерена в Трън (-38.3°C).</p>
       </div>
+
       <div class="info-card">
         <h4>🌍 Локация</h4>
         <p>Приложението работи само за градове в България.</p>
       </div>
+
     </aside>
   </div>
+
   <footer class="site-footer">
     <p>&copy; 2026 Курсов проект </p>
   </footer>
+
   <script src="index.js"></script>
   <script src="ui.js"></script>
+
   <button class="mobile-menu-toggle" aria-controls="side-menus" aria-label="Меню" aria-expanded="false">☰</button>
   <button class="mobile-info-toggle" aria-controls="side-info" aria-label="Информация" aria-expanded="false">ℹ️</button>
   <div class="backdrop" hidden></div>
+
 </body>
 </html>

@@ -11,7 +11,6 @@
   --transition: all 0.3s ease;
 }
 
-/* Global fixes for mobile friendliness */
 *,
 *::before,
 *::after {
@@ -44,7 +43,6 @@ body {
   flex: 1;
 }
 
-/* Sidebars hidden by default (desktop shows them at >=1200px) */
 .sidebar-left,
 .sidebar-right {
   display: none;
@@ -172,7 +170,6 @@ button:hover {
   font-size: 0.9rem;
 }
 
-/* Gallery */
 .gallery-container {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -182,7 +179,6 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* FIX: this MUST be grid */
 .video-grid {
   display: grid;
   gap: 25px;
@@ -211,7 +207,6 @@ button:hover {
   background: #000;
 }
 
-.video-wrapper iframe,
 .video-wrapper video {
   position: absolute;
   top: 0;
@@ -238,7 +233,11 @@ button:hover {
   color: #555;
 }
 
-/* Animations */
+.mobile-menu-toggle,
+.mobile-info-toggle {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -263,7 +262,6 @@ button:hover {
   }
 }
 
-/* Tablets */
 @media (min-width: 768px) {
   header h1 {
     font-size: 2.5rem;
@@ -276,20 +274,13 @@ button:hover {
   }
 }
 
-/* Medium screens */
 @media (min-width: 992px) {
   .page-layout {
     max-width: 900px;
   }
 }
 
-/* Mobile/Tablet drawers (works up to desktop breakpoint) */
-.mobile-menu-toggle,
-.mobile-info-toggle {
-  display: none;
-}
-
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
   .page-layout {
     width: 100%;
     margin: 0;
@@ -301,7 +292,7 @@ button:hover {
     display: block;
     position: fixed;
     top: 12px;
-    z-index: 2000;
+    z-index: 200;
     font-size: 1.7rem;
     background: var(--accent-color);
     color: #fff;
@@ -337,7 +328,6 @@ button:hover {
     overflow: hidden;
   }
 
-  /* IMPORTANT: show as fixed drawers on tablet/phone */
   .sidebar-left,
   .sidebar-right {
     display: block;
@@ -375,7 +365,6 @@ button:hover {
     transform: translateX(0);
   }
 
-  /* Make controls behave nicely on mid widths */
   .controls {
     flex-wrap: wrap;
   }
@@ -386,7 +375,6 @@ button:hover {
   }
 }
 
-/* Small phones */
 @media (max-width: 600px) {
   body,
   .page-layout {
@@ -446,7 +434,6 @@ button:hover {
   }
 }
 
-/* Desktop */
 @media (min-width: 1200px) {
   .site-header {
     display: none;
