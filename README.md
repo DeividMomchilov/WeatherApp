@@ -25,5 +25,5 @@
   - Nominatim (OpenStreetMap) — геокодиране
   - Open-Meteo — текущо време
  
--AI:
-  -ChatGPT 5 - сценарий на прогноза
+- AI:
+ChatGPT 5 - сценарий на прогноза
